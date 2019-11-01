@@ -107,6 +107,8 @@ Browser *browser;
         }
         [browser.window performSelector:@selector(makeMainWindow) withObject:nil afterDelay:0.2];
         [browser.window performSelector:@selector(makeKeyAndOrderFront:) withObject:NSApp afterDelay:0.2];
+        //主动设置主窗口运行在浅色模式，以便系统在暗色模式下，窗口显示正常。
+        browser.window.appearance = [NSAppearance appearanceNamed:NSAppearanceNameAqua];
         [NSApp activateIgnoringOtherApps:YES];
     }
     
